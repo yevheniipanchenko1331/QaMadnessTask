@@ -6,13 +6,13 @@ import org.openqa.selenium.support.PageFactory;
 public class PageManager {
 
     private WebDriver driver;
-//    protected LoginPage loginPage;
-//    protected HomePage loginPage;
+    protected SignInPage signInPage;
+    protected HomePage homePage;
 
     public PageManager(WebDriver driver){
         this.driver = driver;
-//        loginPage = initElements(new LoginPage(this));
-//        loginPage = initElements(new HomePage(this));
+        signInPage = initElements(new SignInPage(this));
+        homePage = initElements(new HomePage(this));
     }
 
     private <T extends Page> T initElements(T page){

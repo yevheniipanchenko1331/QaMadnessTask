@@ -1,3 +1,4 @@
+import helpers.UserHelper;
 import managers.AppManager;
 import managers.SingletonAppManager;
 import org.openqa.selenium.WebDriver;
@@ -6,6 +7,7 @@ import org.testng.annotations.*;
 public class TestBase {
 
         AppManager app = SingletonAppManager.getInstance().manager;
+        UserHelper userHelper = app.getUserHelper();
         WebDriver driver = AppManager.getWebDriver();
 
         @BeforeMethod
@@ -31,7 +33,7 @@ public class TestBase {
 
         @AfterSuite
         public void afterSuite() {
-            driver.quit();
+                driver.quit();
         }
 
 }

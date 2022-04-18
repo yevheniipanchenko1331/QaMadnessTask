@@ -17,8 +17,32 @@ public class HomePage extends Page {
     @FindBy(xpath = "//a[@href='/login']")
     WebElement signInButton;
 
-    public void clickOnTheLoginButton(){
-        wait.until(ExpectedConditions.elementToBeClickable(signInButton));
-        signInButton.click();
+    @FindBy(xpath = "//summary[@aria-label = 'View profile and more']")
+    WebElement viewProfileMenuButton;
+
+    @FindBy(xpath = "//a[contains(text(), 'Signed in as')]")
+    WebElement signedInNotify;
+
+    @FindBy(xpath = "//button[contains(text(), 'Sign out')] ")
+    WebElement signOutButton;
+
+    public void clickOnTheSignInButton(){
+        wait.until(ExpectedConditions.elementToBeClickable(signInButton)).click();
+    }
+
+    public void clickOnTheSignOutButton(){
+        wait.until(ExpectedConditions.elementToBeClickable(signOutButton)).click();
+    }
+
+    public void clickOnTheViewProfileMenuButton(){
+        wait.until(ExpectedConditions.elementToBeClickable(viewProfileMenuButton)).click();
+    }
+
+    public WebElement getSignedInNotifyElement(){
+        return signedInNotify;
+    }
+
+    public WebElement getViewProfileMenuButton(){
+        return viewProfileMenuButton;
     }
 }

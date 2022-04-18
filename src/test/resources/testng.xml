@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="testng" verbose="1">
+    <test name="QaMadnessTask">
+        <classes>
+            <class name="GitHubTest">
+                <methods>
+                    <include name="correctLoginTest"/>
+                    <include name="unsuccessfulSignInWithInvalidEmailTest"/>
+                    <include name="unsuccessfulSignInWithInvalidPasswordTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

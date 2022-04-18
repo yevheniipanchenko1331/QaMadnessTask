@@ -20,3 +20,4 @@ buildNumber.properties
 out/
 /target/
 /src/main/resources/general.properties
+/test-output/
